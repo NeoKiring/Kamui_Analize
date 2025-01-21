@@ -1,0 +1,38 @@
+src:
+  structure.yaml:
+    content: "多言語による自己紹介音声ファイルのプロジェクト構造"
+    dependency: []
+    agent: "minimax-tts"
+    api: []
+  main:
+    introduction_ja.mp3:
+      content: |-
+        わたしのなまえはさくらです。にほんのとうきょうにすんでいます。よろしくおねがいします。
+      dependency: []
+      agent: "minimax-tts"
+      api: []
+    introduction_en.mp3:
+      content: |-
+        Hello, my name is Sakura. I live in Tokyo, Japan. Nice to meet you.
+      dependency: []
+      agent: "minimax-tts"
+      api: []
+    introduction_fr.mp3:
+      content: |-
+        Bonjour, je m'appelle Sakura. J'habite à Tokyo, au Japon. Enchantée.
+      dependency: []
+      agent: "minimax-tts"
+      api: []
+    introduction_es.mp3:
+      content: |-
+        Hola, me llamo Sakura. Vivo en Tokio, Japón. Mucho gusto.
+      dependency: []
+      agent: "minimax-tts"
+      api: []
+    introduction_zh.mp3:
+      content: |-
+        你好，我叫樱花。我住在日本东京。很高兴认识你。
+      dependency: []
+      agent: "minimax-tts"
+      api: []
+
