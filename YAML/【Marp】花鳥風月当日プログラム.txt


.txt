@@ -1,0 +1,214 @@
+src:
+ structure.yaml:
+   content: "墨の呼吸 - 静寂の中に宿る生命 プレゼンテーション"
+   dependency:
+     - src/slides/01_title.png
+     - src/slides/02_flower.png
+     - src/slides/03_bird.png
+     - src/slides/04_wind.png
+     - src/slides/05_moon.png
+     - src/theme/style.css
+   agent: "claude-3-5-sonnet-20241022"
+   api: ["imagen-3.0-generate-001"]
+ slides:
+   '01_title.png':
+     content: |-
+       タイトルスライド
+       - 墨黒と和紙色のグラデーション
+       - 墨絵の繊細な線
+       - 鶴のシルエット
+       - 余白の美学
+     dependency: []
+     agent: "imagen-3.0-generate-001"
+     api: []
+   '02_flower.png':
+     content: |-
+       花の墨絵
+       - 墨のにじみと繊細な線
+       - 季節の静寂を表現
+       - 生命力と儚さの対比
+     dependency: []
+     agent: "imagen-3.0-generate-001"
+     api: []
+   '03_bird.png':
+     content: |-
+       鶴の墨絵
+       - 墨の濃淡による鶴の表現
+       - 秋の草原の背景
+       - 繊細な線と力強い存在感
+     dependency: []
+     agent: "imagen-3.0-generate-001"
+     api: []
+   '04_wind.png':
+     content: |-
+       風の墨絵
+       - 風を感じる表現
+       - 墨の力強い線
+       - 自然の呼吸を描く
+     dependency: []
+     agent: "imagen-3.0-generate-001"
+     api: []
+   '05_moon.png':
+     content: |-
+       月の墨絵
+       - 闇を貫く月の光
+       - 墨の濃淡による宇宙の静寂
+       - 無限の余白
+     dependency: []
+     agent: "imagen-3.0-generate-001"
+     api: []
+   program.marp:
+     content: |-
+       ---
+       marp: true
+       theme: uncover
+       class: invert
+       style: |
+         section {
+           background-color: #F4E1D2;
+           color: #2C2A29;
+           font-family: 'Noto Serif JP', serif;
+         }
+         h1, h2 {
+           color: #5B4B3A;
+           border-bottom: 2px solid #5B4B3A;
+         }
+
+
+       # 墨の呼吸
+       ## 静寂の中に宿る生命
+
+
+       ![bg](./src/slides/01_title.png)
+
+
+       ---
+
+
+       ### 企画趣旨
+
+
+       自然の息吹を、墨の一筆に託す
+       移ろいゆく季節の中に宿る、静かな生命の輝き
+
+
+       「花鳥風月」は、日本の伝統美学が紡ぐ
+       自然との深遠な対話
+
+
+       ---
+
+
+       ### 作品解説
+
+
+       ![bg right:50%](./src/slides/02_flower.png)
+
+
+       #### 花 - 生命の息吹
+
+
+       季節の移ろいを越え、静かに咲く花
+       墨の濃淡が語る、生命の強靭さと儚さ
+
+
+       ---
+
+
+       ### 作品解説
+
+
+       ![bg left:50%](./src/slides/03_bird.png)
+
+
+       #### 鳥 - 精神の静寂
+
+
+       秋の草原に佇む、凛とした鶴
+       動と静、力強さと繊細さが交差する瞬間
+
+
+       ---
+
+
+       ### 作品解説
+
+
+       ![bg right:50%](./src/slides/04_wind.png)
+
+
+       #### 風 - 自然の呼吸
+
+
+       風の息吹
+       その柔軟さと強さは、自然の真理
+       墨の線が描く、生命のリズム
+
+
+       ---
+
+
+       ### 作品解説
+
+
+       ![bg left:50%](./src/slides/05_moon.png)
+
+
+       #### 月 - 宇宙の静寂
+
+
+       闇を貫く月の光
+       無限の静寂の中に宿る、静かな生命の輝き
+
+
+       ---
+
+
+       ### アーティスト
+
+
+       墨の息吹を、伝統の技法を通じて表現する
+       神威とNyukiによる静かな共演
+
+
+       ---
+
+
+       ### 会場・日時
+
+
+       日時：今宵、月影の時
+       会場：X
+       主催：Nyuki
+
+
+       ---
+     dependency:
+       - src/slides/01_title.png
+       - src/slides/02_flower.png
+       - src/slides/03_bird.png
+       - src/slides/04_wind.png
+       - src/slides/05_moon.png
+     agent: "claude-3-5-sonnet-20241022"
+     api: []
+ theme:
+   style.css:
+     content: |-
+       /* 墨絵風プレゼンテーションスタイル */
+       body {
+         background-color: #F4E1D2;
+         color: #2C2A29;
+         font-family: 'Noto Serif JP', serif;
+       }
+       h1, h2 {
+         color: #5B4B3A;
+         border-bottom: 2px solid #5B4B3A;
+       }
+       /* 余白と線の美学 */
+       section {
+         padding: 40px;
+       }
+     dependency: []
+     agent: "claude-3-5-sonnet-20241022"
+     api: []
+
