@@ -1,0 +1,96 @@
+src:
+  structure.yaml:
+    content: |-
+      サイバーパンクスタイルの自動車画像・動画生成プロジェクト
+      - 未来的な自動車デザインの可視化
+      - ネオンシティをテーマにした視覚表現
+      - 画像と動画の多様なバリエーション生成
+      - 高度なAI画像・動画生成技術の活用
+    dependency: 
+      - src/output/cyberpunk-car-image-1.png
+      - src/output/cyberpunk-car-image-2.png
+      - src/output/cyberpunk-car-image-3.png
+      - src/output/cyberpunk-car-video-1.mp4
+      - src/output/cyberpunk-car-video-2.mp4
+      - src/output/cyberpunk-car-video-3.mp4
+    agent: "claude-3-5-sonnet-20241022"
+    api: ["lumalabs-photon-1", "kling-v1-video-i2v"]
+
+  output:
+    cyberpunk-car-image-1.png:
+      content: |-
+        サイバーパンク風の自動車がネオン街を疾走する画像（パターン1）
+        - 高度な技術が組み込まれた未来的な自動車
+        - ネオンライトが反射するボディ
+        - 都会の夜景を背景に
+        - 視覚的な詳細と未来感の表現
+        agent選定理由: lumalabs-photon-1は高品質な画像生成が求められるプロフェッショナルな制作やデザインに適しています。
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+
+    cyberpunk-car-image-2.png:
+      content: |-
+        サイバーパンク風の自動車がネオン街を疾走する画像（パターン2）
+        - 高度な技術が組み込まれた未来的な自動車
+        - ネオンライトが反射するボディ
+        - 都会の夜景を背景に
+        - 異なる角度と照明効果の表現
+        agent選定理由: lumalabs-photon-1は高品質な画像生成が求められるプロフェッショナルな制作やデザインに適しています。
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+
+    cyberpunk-car-image-3.png:
+      content: |-
+        サイバーパンク風の自動車がネオン街を疾走する画像（パターン3）
+        - 高度な技術が組み込まれた未来的な自動車
+        - ネオンライトが反射するボディ
+        - 都会の夜景を背景に
+        - 最先端のデザインと未来的な雰囲気
+        agent選定理由: lumalabs-photon-1は高品質な画像生成が求められるプロフェッショナルな制作やデザインに適しています。
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+
+    cyberpunk-car-video-1.mp4:
+      content: |-
+        サイバーパンク風の自動車がネオン街を疾走する動画（パターン1）
+        - スピード感あふれる動き
+        - ネオンライトが反射するボディ
+        - 都会の夜景を背景に
+        - 動的な移動と未来的な雰囲気の表現
+        agent選定理由: kling-v1-video-i2vは高品質な動画生成が可能で、特に動きのあるシーンの生成に適しています。
+      dependency:
+        - src/output/cyberpunk-car-image-1.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      api: []
+
+    cyberpunk-car-video-2.mp4:
+      content: |-
+        サイバーパンク風の自動車がネオン街を疾走する動画（パターン2）
+        - スピード感あふれる動き
+        - ネオンライトが反射するボディ
+        - 都会の夜景を背景に
+        - 異なる角度と動きの表現
+        agent選定理由: kling-v1-video-i2vは高品質な動画生成が可能で、特に動きのあるシーンの生成に適しています。
+      dependency:
+        - src/output/cyberpunk-car-image-2.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      api: []
+
+    cyberpunk-car-video-3.mp4:
+      content: |-
+        サイバーパンク風の自動車がネオン街を疾走する動画（パターン3）
+        - スピード感あふれる動き
+        - ネオンライトが反射するボディ
+        - 都会の夜景を背景に
+        - 最先端の動的表現と未来的な雰囲気
+        agent選定理由: kling-v1-video-i2vは高品質な動画生成が可能で、特に動きのあるシーンの生成に適しています。
+      dependency:
+        - src/output/cyberpunk-car-image-3.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      api: []
