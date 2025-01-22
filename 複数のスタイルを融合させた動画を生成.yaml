@@ -1,0 +1,61 @@
+src:
+  structure.yaml:
+    content: "プロジェクト構造の説明, コードの内容, 依存関係, エージェント選定理由, API選定理由\nこのプロジェクトは、今年の干支である巳（蛇）をテーマに、浮世絵風、ホログラム風、ポップアート風の画像・動画を生成します。各スタイルに合わせた画像生成と、それらを組み合わせた動画生成を行います。依存関係は、各画像生成スクリプトが生成した画像を動画生成スクリプトが利用する形になります。エージェントは、各タスクに最適なモデルを選択し、APIは画像生成と動画生成に必要なものを選択します。"
+    dependency: []
+    agent: "claude-3-5-sonnet-20241022"
+    api: []
+  image-generation:
+    ukiyoe-snake.png:
+      content: |-
+        ""浮世絵風の蛇の画像生成
+        プロンプト:
+        - 浮世絵風のタッチで描かれた蛇
+        - 背景には波や雲などの伝統的な模様
+        - 色彩は鮮やかで、力強い印象
+        
+        agent選定理由: lumalabs-photon-1は高品質な画像生成に特化しており、特に伝統的なスタイルや複雑な模様の表現に優れています。""
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+    hologram-snake.png:
+      content: |-
+        ""ホログラム風の蛇の画像生成
+        プロンプト:
+        - ホログラムのように光り輝く蛇
+        - 背景は暗く、蛇が浮き上がって見える
+        - 色彩は青や紫などのサイバーパンク風
+        
+        agent選定理由: lumalabs-photon-1は高品質な画像生成に特化しており、特に光の表現や特殊効果の表現に優れています。""
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+    popart-snake.png:
+      content: |-
+        ""ポップアート風の蛇の画像生成
+        プロンプト:
+        - ポップアート風のカラフルな蛇
+        - 背景は単色で、蛇が目立つ
+        - 色彩は原色を使い、大胆な印象
+        
+        agent選定理由: lumalabs-photon-1は高品質な画像生成に特化しており、特に鮮やかな色彩や大胆な表現に優れています。""
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+  video-generation:
+    snake-video.mp4:
+      content: |-
+        ""蛇の動画生成
+        プロンプト:
+        - 浮世絵風、ホログラム風、ポップアート風の蛇の画像を組み合わせて動画を作成
+        - 各画像がスムーズに切り替わるように編集
+        - BGMは和風で、少しミステリアスな雰囲気
+        
+        agent選定理由: luma-ai-videoは高品質な動画生成と編集に特化しており、複数の画像を組み合わせてスムーズな動画を作成するのに適しています。""
+      dependency:
+        - src/image-generation/ukiyoe-snake.png
+        - src/image-generation/hologram-snake.png
+        - src/image-generation/popart-snake.png
+      dependency_wait: true
+      agent: "luma-ai-video"
+      api: []
+
