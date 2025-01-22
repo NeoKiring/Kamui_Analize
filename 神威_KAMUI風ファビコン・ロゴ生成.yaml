@@ -1,0 +1,119 @@
+src:
+  structure.yaml:
+    content: "ロゴデザインプロジェクトの構造。Google ImagenとLuma AIを使用した10パターンのロゴ生成"
+    dependency: []
+    agent: "claude-3-5-sonnet-20241022"
+    api: []
+  
+  logos:
+    google_imagen:
+      spiral_logo.png:
+        content: |-
+          渦巻き模様のロゴ
+          - オレンジ、赤、紫のグラデーション
+          - 滑らかな曲線の連続
+          - 抽象的でスタイリッシュ
+          - 白背景
+        dependency: []
+        agent: "imagen-3.0-generate-001"
+        api: []
+
+      circular_gradient_logo.png:
+        content: |-
+          円形グラデーションロゴ
+          - オレンジ、赤、紫の放射状グラデーション
+          - 中央に向かって濃くなる
+          - シンプルでモダン
+          - 白背景
+        dependency: []
+        agent: "imagen-3.0-generate-001"
+        api: []
+
+      wave_gradient_logo.png:
+        content: |-
+          波状グラデーションロゴ
+          - オレンジ、赤、紫のグラデーション
+          - 波状の連続的な曲線
+          - 躍動感とエネルギー
+          - 白背景
+        dependency: []
+        agent: "imagen-3.0-generate-001"
+        api: []
+
+      geometric_logo.png:
+        content: |-
+          幾何学模様ロゴ
+          - オレンジ、赤、紫のグラデーション
+          - 三角形、四角形、円形の組み合わせ
+          - モダンで洗練された印象
+          - 白背景
+        dependency: []
+        agent: "imagen-3.0-generate-001"
+        api: []
+
+      abstract_logo.png:
+        content: |-
+          抽象模様ロゴ
+          - オレンジ、赤、紫のグラデーション
+          - 曲線と鋭角の組み合わせ
+          - 複雑で目を引くデザイン
+          - 白背景
+        dependency: []
+        agent: "imagen-3.0-generate-001"
+        api: []
+
+    luma_ai:
+      spiral_logo.png:
+        content: |-
+          渦巻き模様ロゴ
+          - オレンジ、赤、紫のグラデーション
+          - 渦巻きの中心に焦点
+          - 奥行きと動きの表現
+          - 白背景
+        dependency: []
+        agent: "lumalabs-photon-1"
+        api: []
+
+      circular_gradient_logo.png:
+        content: |-
+          円形グラデーションロゴ
+          - オレンジ、赤、紫の放射状グラデーション
+          - 円の中心から広がる
+          - シンプルでモダン
+          - 白背景
+        dependency: []
+        agent: "lumalabs-photon-1"
+        api: []
+
+      wave_gradient_logo.png:
+        content: |-
+          波状グラデーションロゴ
+          - オレンジ、赤、紫のグラデーション
+          - 波状の連続的な曲線
+          - 躍動感とエネルギー
+          - 白背景
+        dependency: []
+        agent: "lumalabs-photon-1"
+        api: []
+
+      geometric_logo.png:
+        content: |-
+          幾何学模様ロゴ
+          - オレンジ、赤、紫のグラデーション
+          - 幾何学図形の組み合わせ
+          - モダンで洗練された印象
+          - 白背景
+        dependency: []
+        agent: "lumalabs-photon-1"
+        api: []
+
+      abstract_logo.png:
+        content: |-
+          抽象模様ロゴ
+          - オレンジ、赤、紫のグラデーション
+          - 曲線と鋭角の組み合わせ
+          - 複雑で想像力を刺激する
+          - 白背景
+        dependency: []
+        agent: "lumalabs-photon-1"
+        api: []
