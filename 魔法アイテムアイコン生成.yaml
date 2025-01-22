@@ -1,0 +1,173 @@
+src:
+  structure.yaml:
+    content: |-
+      魔法アイテムアイコン生成プロジェクト
+      - 共通枠テンプレートの作成
+      - 10種類の炎属性アイコン生成
+      - PNG形式
+      - 完全背景透過
+      - ひし形の白線枠
+      - 高品質画像生成
+      - アイテム形状は白線のみで描画
+      - すべてのアイコンは diamond-frame.png との合成を想定
+    dependency: []
+    agent: "claude-3-5-sonnet-20241022"
+    api: []
+  image-generation:
+    templates:
+      diamond-frame.png:
+        content: |-
+          魔法アイテムアイコン用の共通ひし形枠
+          プロンプト:
+          - キャンバス全体が透過背景
+          - センターに白いひし形フレームを描く
+          - フレーム線は均一な太さでやや太め
+          - 角は鋭角で対称性を厳格に保つ
+          - 枠内外は透明
+          - スタイルはシャープでクリスタル状の印象
+          - 解像度は高めの設定
+        dependency: []
+        agent: "lumalabs-photon-1"
+        api: []
+    magic-items:
+      fire-amulet.png:
+        content: |-
+          炎のエネルギーを宿すアミュレット
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - アイテム形状は白線のみで表現
+          - 白線は均一な太さでやや細め
+          - 炎の装飾を表現する場合も白線で描く
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
+      fire-bow.png:
+        content: |-
+          炎の矢を放つ弓
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - アイテム形状は白線のみで表現
+          - 弓の曲線美を強調、矢の先端や弦も白線で描く
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
+      fire-cloak.png:
+        content: |-
+          炎のエネルギーで編まれたクローク
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - クロークの形状や裾のうねりは白線のみで表現
+          - 炎をイメージさせるライン装飾を追加
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
+      fire-dagger.png:
+        content: |-
+          炎を纏った短剣
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - 短剣の刃先や炎の装飾は白線のみで描く
+          - 凹凸やディテールはラインの太さや強弱で表現
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
+      fire-gloves.png:
+        content: |-
+          炎のパワーを纏う手袋
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - グローブの輪郭や指先の形状を白線のみで表現
+          - 炎を想起させる模様を追加しつつ、過度に複雑にしない
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
+      fire-helmet.png:
+        content: |-
+          炎のエネルギーで覆われたヘルメット
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - ヘルメットの曲線や装飾は白線のみで表現
+          - 先端や縁に炎の意匠を追加
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
+      fire-ring.png:
+        content: |-
+          炎の力を纏う指輪
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - 指輪の円形部分や宝石部分を白線のみで表現
+          - 炎をイメージする小さな装飾ラインを追加
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
+      fire-shield.png:
+        content: |-
+          炎のエネルギーで覆われた盾
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - 盾の輪郭や装飾パターンを白線のみで表現
+          - 炎の防御的パワーを象徴する曲線を追加
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
+      fire-staff.png:
+        content: |-
+          炎を放つ魔法の杖
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - 杖の長さを活かした細身の輪郭を白線のみで表現
+          - 先端に炎を象徴する模様を追加
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
+      fire-sword.png:
+        content: |-
+          炎を纏った剣のアイコン
+          プロンプト:
+          - diamond-frame.png を背景に合成
+          - アイテム領域は枠内に収める
+          - 剣の形状は白線のみで力強く描く
+          - 刀身に炎のパターンラインを追加
+          - 枠線との重なりは自然かつクリアに表示
+          - 背景透過、全体的に高解像度を維持
+        dependency:
+          - src/image-generation/templates/diamond-frame.png
+        agent: "lumalabs-photon-1"
+        api: []
