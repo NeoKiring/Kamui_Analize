@@ -1,0 +1,92 @@
+src:
+  structure.yaml:
+    content: |-
+      画像・動画生成プロジェクトの統合実装
+      - 3種類の猫画像と対応する動画生成
+      - Luma AIとKling AIを活用したマルチモーダル生成
+      - 高品質な画像と自然な動画生成
+    dependency: 
+      - src/image-generation/cat-image1.png
+      - src/image-generation/cat-image2.png
+      - src/image-generation/cat-image3.png
+    agent: "claude-3-5-sonnet-20241022"
+    api: 
+      - "lumalabs-photon-1"
+      - "kling-v1-video-i2v"
+
+  image-generation:
+    cat-image1.png:
+      content: |-
+        リアルな猫の画像生成
+        - 高品質な詳細表現
+        - 自然な質感と表情
+        - 柔らかな光の中での撮影
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+
+    cat-image2.png:
+      content: |-
+        遊び心のある猫の画像生成
+        - 動きのある姿勢
+        - 好奇心に満ちた表情
+        - 生き生きとした雰囲気
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+
+    cat-image3.png:
+      content: |-
+        背景付き猫の画像生成
+        - 自然な背景との調和
+        - リラックスした雰囲気
+        - 環境との一体感
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+
+  output:
+    cat-video1.mp4:
+      content: |-
+        猫の伸びと好奇心を表現した動画
+        - 10秒間の自然な動き
+        - カメラに向かう好奇心
+        - 柔らかな光の演出
+      dependency:
+        - src/image-generation/cat-image1.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      video_generation_params:
+        duration: 10
+        resolution: "720p"
+      api: []
+
+    cat-video2.mp4:
+      content: |-
+        猫の遊び心を描いた動画
+        - おもちゃで遊ぶ様子
+        - 活発な動きと表情
+        - 遊びの楽しさを表現
+      dependency:
+        - src/image-generation/cat-image2.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      video_generation_params:
+        duration: 10
+        resolution: "720p"
+      api: []
+
+    cat-video3.mp4:
+      content: |-
+        窓辺でくつろぐ猫の動画
+        - 静かな環境での様子
+        - 自然な背景との調和
+        - リラックスした雰囲気
+      dependency:
+        - src/image-generation/cat-image3.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      video_generation_params:
+        duration: 10
+        resolution: "720p"
+      api: []
