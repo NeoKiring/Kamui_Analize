@@ -1,0 +1,182 @@
+src:
+  structure.yaml:
+    content: |-
+      プロジェクト構造の説明
+      - 日本の栃木県にある華厳の滝と和歌山県にある那智の滝を融合させて双頭の滝を作り、春、夏、秋、冬の4つのシーンで描いた写真から個別に動画を生成するプロジェクト
+      - 各シーンには季節を代表する植物を含め、個別に詳細な種類、風景の描写と色合いを設定
+      - 植物の位置は4シーンで統一
+      - ナショナルジオグラフィック誌に掲載されるような、高品質で臨場感あふれる写真と動画を目指す
+      - カメラ設定を詳細に指定し、各シーンに最適な露出、被写界深度、ホワイトバランスなどを表現
+      - 4つの静止画それぞれから、kling-v1-video-i2vを使用して個別の動画を生成
+      - 各動画には、英語で5秒程度のドキュメンタリー風解説音声をminimax-ttsを使って追加
+      - structure.yamlと画像生成、動画生成、音声生成用のスクリプトを含む
+      - 依存関係: image-generationディレクトリ内の各画像ファイル、video-generationディレクトリ内の各動画ファイル、audio-generationディレクトリ内の各音声ファイル
+      - エージェント選定理由: claude-3-5-sonnet-20241022は、プロジェクトの全体構造を理解し、各コンポーネントの役割を明確に定義する能力に優れているため。
+      - API選定理由: なし
+      - "にじボイスのご利用は必ずクレジット表記が必要です（https://nijivoice.com/#faq）"
+    dependency:
+      - src/image-generation/kilimanjaro-machame-evening.png
+      - src/image-generation/kilimanjaro-machame-morning.png
+      - src/image-generation/kilimanjaro-machame-night.png
+      - src/image-generation/kilimanjaro-machame-noon.png
+      - src/video-generation/kilimanjaro-machame-morning.mp4
+      - src/video-generation/kilimanjaro-machame-noon.mp4
+      - src/video-generation/kilimanjaro-machame-evening.mp4
+      - src/video-generation/kilimanjaro-machame-night.mp4
+      - src/audio-generation/kilimanjaro-machame-morning.mp3
+      - src/audio-generation/kilimanjaro-machame-noon.mp3
+      - src/audio-generation/kilimanjaro-machame-evening.mp3
+      - src/audio-generation/kilimanjaro-machame-night.mp3
+    agent: "claude-3-5-sonnet-20241022"
+    api: []
+  audio-generation:
+    kilimanjaro-machame-evening.mp3:
+      content: |-
+        "Evening at Shira Camp. Sunset paints the sky orange and purple."
+      dependency:
+        - src/video-generation/kilimanjaro-machame-evening.mp4
+      agent: "minimax-tts-ja-intellectual-senior"
+      api: []
+    kilimanjaro-machame-morning.mp3:
+      content: |-
+        "At Machame Gate, the journey begins. Climbers take their first steps."
+      dependency:
+        - src/video-generation/kilimanjaro-machame-morning.mp4
+      agent: "minimax-tts-ja-intellectual-senior"
+      api: []
+    kilimanjaro-machame-night.mp3:
+      content: |-
+        "Climbers rest under stars at Barafu Camp. The cold night is warmed by adventure."
+      dependency:
+        - src/video-generation/kilimanjaro-machame-night.mp4
+      agent: "minimax-tts-ja-intellectual-senior"
+      api: []
+    kilimanjaro-machame-noon.mp3:
+      content: |-
+        "Midday sun. Climbers at Machame Camp lunch with mountain views."
+      dependency:
+        - src/video-generation/kilimanjaro-machame-noon.mp4
+      agent: "minimax-tts-ja-intellectual-senior"
+      api: []
+  image-generation:
+    kilimanjaro-machame-evening.png:
+      content: |-
+        夕方（2日目）のキリマンジャロ・マチャメルートの写真
+        - 場所: シラキャンプ付近 (標高約3,840m)
+        - 夕焼け空を背景にしたキリマンジャロの風景
+        - マチャメルートを登る3名の欧米人登山者
+        - 登山者1: 赤いジャケットと黒い登山パンツの女性、長いブロンドの髪をポニーテールに結んでいる、シラキャンプで夕日を眺める
+        - 登山者2: 青いバックパックとグレーのズボンの男性、短い茶髪で顎ひげを生やしている、キャンプ設営を手伝う
+        - 登山者3: 黄色の帽子と茶色の登山靴の男性、短い金髪でひげはなし、夕食の準備
+        - カメラ設定: 望遠レンズ(70-200mm)、絞り優先(f/5.6)、ISO 400、シャッタースピード 1/125秒、ホワイトバランス「曇り」、グラデーションNDフィルター使用
+        - 暖色系の色調で、一日の終わりの静けさを表現
+        - ナショナルジオグラフィック誌に掲載されていそうな、臨場感あふれる自然な写真の仕上がり
+        agent選定理由: imagen-3.0-generate-001はGoogle DeepMindの最高性能AIであり、特定の山岳風景と時間帯に応じた自然な光の表現、個別に設定された人物の詳細な描写（人種、髪型、ひげの有無、服装など）、詳細なカメラ設定に基づいた写真の生成が可能なため。
+        api選定理由: なし
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    kilimanjaro-machame-morning.png:
+      content: |-
+        朝（1日目）のキリマンジャロ・マチャメルートの写真
+        - 場所: マチャメゲート付近 (標高約1,800m)
+        - 朝日を浴びて輝くキリマンジャロの風景
+        - マチャメルートを登り始めた3名の欧米人登山者
+        - 登山者1: 赤いジャケットと黒い登山パンツの女性、長いブロンドの髪をポニーテールに結んでいる、マチャメゲートで入山手続き
+        - 登山者2: 青いバックパックとグレーのズボンの男性、短い茶髪で顎ひげを生やしている、ゲート付近でストレッチ
+        - 登山者3: 黄色の帽子と茶色の登山靴の男性、短い金髪でひげはなし、登山道の標識を確認
+        - カメラ設定: 広角レンズ(24mm)、絞り優先(f/8)、ISO 100、シャッタースピード 1/250秒、ホワイトバランス「晴天」、露出補正+0.7、C-PLフィルター使用
+        - 明るく爽やかな色調で、新たな挑戦の始まりを表現
+        - ナショナルジオグラフィック誌に掲載されていそうな、臨場感あふれる自然な写真の仕上がり
+        agent選定理由: imagen-3.0-generate-001はGoogle DeepMindの最高性能AIであり、特定の山岳風景と時間帯に応じた自然な光の表現、個別に設定された人物の詳細な描写（人種、髪型、ひげの有無、服装など）、詳細なカメラ設定に基づいた写真の生成が可能なため。
+        api選定理由: なし
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    kilimanjaro-machame-night.png:
+      content: |-
+        夜（3日目）のキリマンジャロ・マチャメルートの写真
+        - 場所: バラフキャンプ付近 (標高約4,600m)
+        - 満天の星空の下、シルエットとして浮かび上がるキリマンジャロ
+        - マチャメルートを歩く3名の欧米人登山者
+        - 登山者1: 赤いジャケットと黒い登山パンツの女性、長いブロンドの髪をポニーテールに結んでいる、バラフキャンプで星空を眺める
+        - 登山者2: 青いバックパックとグレーのズボンの男性、短い茶髪で顎ひげを生やしている、防寒着を着込んでテントで休む
+        - 登山者3: 黄色の帽子と茶色の登山靴の男性、短い金髪でひげはなし、翌日のアタックに備えて装備を確認
+        - カメラ設定: 超広角レンズ(14mm)、マニュアル露出(f/2.8)、ISO 3200、シャッタースピード 20秒、ホワイトバランス「電球色」、三脚使用、リモートレリーズ使用
+        - 暗闇と静寂の中、登山者たちの存在感を表現
+        - ナショナルジオグラフィック誌に掲載されていそうな、臨場感あふれる自然な写真の仕上がり
+        agent選定理由: imagen-3.0-generate-001はGoogle DeepMindの最高性能AIであり、特定の山岳風景と時間帯に応じた自然な光の表現、個別に設定された人物の詳細な描写（人種、髪型、ひげの有無、服装など）、詳細なカメラ設定に基づいた写真の生成が可能なため。
+        api選定理由: なし
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    kilimanjaro-machame-noon.png:
+      content: |-
+        昼（1日目）のキリマンジャロ・マチャメルートの写真
+        - 場所: マチャメキャンプ付近 (標高約3,000m)
+        - 強い日差しが照りつけるキリマンジャロの風景
+        - マチャメルートを歩く3名の欧米人登山者
+        - 登山者1: 赤いジャケットと黒い登山パンツの女性、長いブロンドの髪をポニーテールに結んでいる、マチャメキャンプで昼食
+        - 登山者2: 青いバックパックとグレーのズボンの男性、短い茶髪で顎ひげを生やしている、サングラスをかけて景色を眺める
+        - 登山者3: 黄色の帽子と茶色の登山靴の男性、短い金髪でひげはなし、リュックから水筒を取り出す
+        - カメラ設定: 標準レンズ(50mm)、絞り優先(f/11)、ISO 200、シャッタースピード 1/500秒、ホワイトバランス「晴天」、UVフィルター使用
+        - 明るく力強い色調で、過酷な環境下での挑戦を表現
+        - ナショナルジオグラフィック誌に掲載されていそうな、臨場感あふれる自然な写真の仕上がり
+        agent選定理由: imagen-3.0-generate-001はGoogle DeepMindの最高性能AIであり、特定の山岳風景と時間帯に応じた自然な光の表現、個別に設定された人物の詳細な描写（人種、髪型、ひげの有無、服装など）、詳細なカメラ設定に基づいた写真の生成が可能なため。
+        api選定理由: なし
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+  video-generation:
+    kilimanjaro-machame-evening.mp4:
+      content: |-
+        キリマンジャロ・マチャメルート登山の夕方の様子を捉えた動画
+        - 「kilimanjaro-machame-evening.png」から生成された動画
+        - 登山者たちの動きや夕焼け空に染まる風景の変化を自然に表現
+        - ナショナルジオグラフィック誌に掲載されていそうな、高品質で臨場感あふれる動画の仕上がり
+        agent選定理由: kling-v1-video-i2vは、画像から自然な動画を生成する能力に優れており、登山者たちの動きや風景の変化をリアルに表現できるため。
+        api選定理由: なし
+      dependency:
+        - src/image-generation/kilimanjaro-machame-evening.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      api: []
+    kilimanjaro-machame-morning.mp4:
+      content: |-
+        キリマンジャロ・マチャメルート登山の朝の様子を捉えた動画
+        - 「kilimanjaro-machame-morning.png」から生成された動画
+        - 登山者たちの動きや朝日が差し込む風景の変化を自然に表現
+        - ナショナルジオグラフィック誌に掲載されていそうな、高品質で臨場感あふれる動画の仕上がり
+        agent選定理由: kling-v1-video-i2vは、画像から自然な動画を生成する能力に優れており、登山者たちの動きや風景の変化をリアルに表現できるため。
+        api選定理由: なし
+      dependency:
+        - src/image-generation/kilimanjaro-machame-morning.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      api: []
+    kilimanjaro-machame-night.mp4:
+      content: |-
+        キリマンジャロ・マチャメルート登山の夜の様子を捉えた動画
+        - 「kilimanjaro-machame-night.png」から生成された動画
+        - 登山者たちの動きや満天の星空の下での風景の変化を自然に表現
+        - ナショナルジオグラフィック誌に掲載されていそうな、高品質で臨場感あふれる動画の仕上がり
+        agent選定理由: kling-v1-video-i2vは、画像から自然な動画を生成する能力に優れており、登山者たちの動きや風景の変化をリアルに表現できるため。
+        api選定理由: なし
+      dependency:
+        - src/image-generation/kilimanjaro-machame-night.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      api: []
+    kilimanjaro-machame-noon.mp4:
+      content: |-
+        キリマンジャロ・マチャメルート登山の昼の様子を捉えた動画
+        - 「kilimanjaro-machame-noon.png」から生成された動画
+        - 登山者たちの動きや強い日差しの下での風景の変化を自然に表現
+        - ナショナルジオグラフィック誌に掲載されていそうな、高品質で臨場感あふれる動画の仕上がり
+        agent選定理由: kling-v1-video-i2vは、画像から自然な動画を生成する能力に優れており、登山者たちの動きや風景の変化をリアルに表現できるため。
+        api選定理由: なし
+      dependency:
+        - src/image-generation/kilimanjaro-machame-noon.png
+      dependency_wait: true
+      agent: "kling-v1-video-i2v"
+      api: []
