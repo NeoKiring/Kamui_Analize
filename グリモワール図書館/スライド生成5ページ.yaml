@@ -1,0 +1,144 @@
+
+src:
+  structure.yaml:
+    content: |-
+      神威/KAMUI プロダクト紹介スライドデッキ
+      - Marpを使用したスライドデッキ
+      - 背景は黒
+      - 2枚目以降は左にタイトルとテキスト、右に挿絵
+      - オレンジと青の粒子感と内容に合わせた画像
+      - 画像には文字を入れない
+      - 最初と最後のスライドの文字色は白
+      - 神威/KAMUI の量子最適化AIエージェント・オーケストレーションを紹介する10枚のスライド
+    dependency:
+      - src/slides/01_title.png
+      - src/slides/02_overview.png
+      - src/slides/03_quantum_optimization.png
+      - src/slides/04_ai_orchestration.png
+      - src/slides/05_agent_management.png
+      - src/slides/06_use_cases.png
+      - src/slides/07_architecture.png
+      - src/slides/08_benefits.png
+      - src/slides/09_future.png
+      - src/slides/10_conclusion.png
+      - src/theme/style.css
+    agent: "claude-3-5-sonnet-20241022"
+    api: ["imagen-3.0-generate-001"]
+  slides:
+    '01_title.png':
+      content: |-
+        タイトルスライド用画像
+        - 神威/KAMUI のロゴを基調とした未来的な抽象デザイン
+        - オレンジと青の粒子
+        - 文字色は白
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    '02_overview.png':
+      content: |-
+        神威/KAMUI の概要を説明する画像
+        - オレンジと青の粒子感のある抽象的なネットワークとAIのイメージ
+        - プロダクトの全体像を表現
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    '03_quantum_optimization.png':
+      content: |-
+        量子最適化の概念を表現する画像
+        - オレンジと青の粒子感のある量子ビットの抽象表現
+        - 最適化アルゴリズムの視覚化
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    '04_ai_orchestration.png':
+      content: |-
+        AIエージェントのオーケストレーションを表現する画像
+        - オレンジと青の粒子感のある複数のAIエージェントが連携する様子
+        - 複雑なタスクを協調して解決するイメージ
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    '05_agent_management.png':
+      content: |-
+        エージェント管理の概念を表現する画像
+        - オレンジと青の粒子感のあるエージェントの監視と制御のイメージ
+        - ダッシュボードや管理インターフェースの視覚化
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    '06_use_cases.png':
+      content: |-
+        神威/KAMUI のユースケースを表現する画像
+        - オレンジと青の粒子感のある様々な業界での応用例
+        - 金融、物流、医療などのアイコンを抽象的に表現
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    '07_architecture.png':
+      content: |-
+        神威/KAMUI のアーキテクチャを表現する画像
+        - オレンジと青の粒子感のあるシステム構成図
+        - 各コンポーネントの連携を視覚化
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    '08_benefits.png':
+      content: |-
+        神威/KAMUI の導入メリットを表現する画像
+        - オレンジと青の粒子感のあるグラフや成長を示すイメージ
+        - 効率化、コスト削減、パフォーマンス向上を視覚化
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    '09_future.png':
+      content: |-
+        神威/KAMUI の将来展望を表現する画像
+        - オレンジと青の粒子感のある未来的な技術革新のイメージ
+        - 新しい可能性と進化を象徴
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    '10_conclusion.png':
+      content: |-
+        結論スライド用画像
+        - 神威/KAMUI のロゴを基調とした未来的な抽象デザイン
+        - オレンジと青の粒子
+        - 文字色は白
+      dependency: []
+      agent: "imagen-3.0-generate-001"
+      api: []
+    presentation.marp:
+      content: |-
+        Marpスライドデッキの構成
+        - 10枚のスライドで神威/KAMUI のプロダクトを紹介
+        - 各スライドに対応する画像を配置
+        - 2枚目以降は左にタイトルとテキスト、右に挿絵
+        - 背景は黒
+        - 最初と最後のスライドの文字色は白
+        - 神威/KAMUI の量子最適化AIエージェント・オーケストレーションを紹介
+      dependency:
+        - src/slides/01_title.png
+        - src/slides/02_overview.png
+        - src/slides/03_quantum_optimization.png
+        - src/slides/04_ai_orchestration.png
+        - src/slides/05_agent_management.png
+        - src/slides/06_use_cases.png
+        - src/slides/07_architecture.png
+        - src/slides/08_benefits.png
+        - src/slides/09_future.png
+        - src/slides/10_conclusion.png
+      agent: "claude-3-5-sonnet-20241022"
+      api: []
+  theme:
+    style.css:
+      content: |-
+        プレゼンテーションのスタイリング
+        - モダンでクリーンなデザイン
+        - 未来的な色彩と typography
+        - レスポンシブな視覚効果
+        - 背景は黒
+        - 2枚目以降は左にタイトルとテキスト、右に画像
+        - 最初と最後のスライドの文字色は白
+      dependency: []
+      agent: "claude-3-5-sonnet-20241022"
+      api: []
