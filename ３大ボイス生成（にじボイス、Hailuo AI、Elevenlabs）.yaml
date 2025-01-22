@@ -1,0 +1,65 @@
+src:
+  structure.yaml:
+    content: |-
+      音声生成プロジェクト構造
+      - 3種類の音声モデルを使用
+      - 異なる用途での音声生成
+      - 日本語・英語の音声ファイル生成
+    dependency: []
+    agent: "claude-3-5-sonnet-20241022"
+    api: []
+  audio:
+    greeting-elevenlabs.mp3:
+      content: |-
+        Welcome to our service! We're excited to have you here.
+        
+        agent選定理由: elevenlabs-voiceは英語の自然な抑揚と感情表現が優れており、
+        歓迎メッセージに適しています。
+      dependency: []
+      agent: "elevenlabs-voice"
+      api: []
+    greeting-jp-nijivoice.mp3:
+      content: |-
+        ようこそ、私たちのサービスへ！皆様をお迎えできることを大変嬉しく思います。
+        
+        agent選定理由: nijivoice-ttsは日本語の自然な発音と抑揚に特化しており、
+        日本語のウェルカムメッセージに最適です。
+      dependency: []
+      agent: "nijivoice-tts"
+      api: []
+    system-alert-minimax.mp3:
+      content: |-
+        けいこくめっせーじ：しすてむめんてなんすをかいしします。
+        
+        agent選定理由: minimax-ttsは明瞭な発音とシステムアナウンスに適した
+        声質を持っており、アラートメッセージに最適です。
+      dependency: []
+      agent: "minimax-tts"
+      api: []
+    product-intro-elevenlabs.mp3:
+      content: |-
+        Discover our latest innovation in technology solutions.
+        
+        agent選定理由: elevenlabs-voiceはプロフェッショナルな
+        トーンでの商品紹介に適しています。
+      dependency: []
+      agent: "elevenlabs-voice"
+      api: []
+    news-jp-nijivoice.mp3:
+      content: |-
+        本日のニュースをお伝えします。株式市場は好調な動きを見せています。
+        
+        agent選定理由: nijivoice-ttsはニュース読み上げに適した
+        クリアな発音と自然な間合いを提供します。
+      dependency: []
+      agent: "nijivoice-tts"
+      api: []
+    error-minimax.mp3:
+      content: |-
+        えらーがはっせいしました。がめんのしじにしたがってさいどうしてください。
+        
+        agent選定理由: minimax-ttsは明確なエラーメッセージの
+        伝達に適した声質を持っています。
+      dependency: []
+      agent: "minimax-tts"
+      api: []
