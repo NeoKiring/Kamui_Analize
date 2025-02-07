@@ -15,11 +15,13 @@ src:
   image-generation:
     eye-catch-pic-DARAKU.png:
       content: |-
-																卓球試合のピクトグラム
+卓球試合のピクトグラム
 - 背景は体育館
-- 選手は2人
+- 選手は2人で2頭身の棒人間
 - それぞれがラケットを持っている
 - それぞれのラケットの色は赤と青
+- 選手はネットを挟んで対面
+- 選手の色はラケットと合わせて光沢をもたせる。
       dependency: []
       agent: "lumalabs-photon-1"
       api: []
