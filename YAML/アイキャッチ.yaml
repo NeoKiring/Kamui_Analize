@@ -1,0 +1,27 @@
+src:
+  structure.yaml:
+    content: |-
+      書評アイキャッチ画像作成プロジェクト
+      - アニメスタイルのピクトグラム画像
+      - シンプルで直感的なモーション
+      - シーンに沿った淡い色の背景
+      
+      注意: 
+      - 静止画生成にはlumalabs-photon-1
+    dependency: []
+    agent: "claude-3-5-sonnet-20241022"
+    api: ["lumalabs-photon-1"]
+
+  image-generation:
+    eye-catch-pic-DARAKU.png:
+      content: |-
+																卓球試合のピクトグラム
+													 - 背景は体育館
+      - 選手は2人
+      - それぞれがラケットを持っている
+      - それぞれのラケットの色は赤と青
+      dependency: []
+      agent: "lumalabs-photon-1"
+      api: []
+
+　
